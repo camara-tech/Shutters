@@ -3,6 +3,8 @@
 	<head>
 		<title>Shutters.biz - Blinds.com Interview Test</title>
 		<link rel="stylesheet" type="text/css" href="shutters.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="shutters.js"></script>
 	</head>
 	<body>
 	<div id="header">
@@ -13,8 +15,15 @@
 		</form>
 	</div>
 	<div id="content">
+		<div id="toggle">Toggle Design</div>
 		<div id="content-header">
 		<p>Sort by: <a href="javascript:;" name="name">Name </a> <a href="javascript:;" name="featured">Featured</a> <a href="javascript:;" name="toprated">Top Rated</a> <a href="javascript:;" name="price">Price</a></p>
+		</div>
+		<div id="properties">
+			<span id="property-name" class="property"><a href="javascript:;" name="name">Name </a></span>
+			<span id="property-featured" class="property"><a href="javascript:;" name="featured">Featured</a></span>
+			<span id="property-toprated" class="property"><a href="javascript:;" name="toprated">Top Rated</a></span> 
+			<span id="property-price" class="property"><a href="javascript:;" name="price">Price</a></span></p>
 		</div>
 		<div class="item">
 			<span id="image"><img src="http://www.blinds.com/images/product/pictures/picture_1166032536.jpg"  width=150 height=135></span> <span id="name">Levelor:2" Premium Wood Blinds</span> <span id="rating">5 out of 10</span> <span id="price">$141</span> <span id="buynow">Buy Now</span>
