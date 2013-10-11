@@ -6,12 +6,16 @@ This is a sample website built for the Blinds.com Interview Test.
 Technologies used:
 * HTML5
 * CSS3
-
-Future planned technologies:
 * Javascript
 * jQuery
-* ASP.NET MVC(C#)
-* angularJS
+* ASP.NET
+
+Future planned technologies:
 * knockoutJS
+
+The solution is for working on the ASP.NET part of the website.
+
+the prototype folder is where I rapidly prototype how I want the page to look and interact.
+
 
 Thank you Taylor Anderson and the team at Genuent for working with me in my job search. 
