@@ -1,7 +1,7 @@
 Shutters
 --------
 
-This is a sample website built for the Blinds.com Interview Test.
+This is a sample website built for a Blinds.com Interview Test.
 
 Technologies used:
 * HTML5
@@ -9,8 +9,6 @@ Technologies used:
 * Javascript
 * jQuery
 * ASP.NET
-
-Future planned technologies:
 * knockoutJS
 
 The solution is for working on the ASP.NET part of the website.
