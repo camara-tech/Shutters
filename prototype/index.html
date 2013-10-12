@@ -5,17 +5,29 @@
 		<link rel="stylesheet" type="text/css" href="shutters.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
-		<script src="shutters.js"></script>
+		<script src="js/shutters.js"></script>
 	</head>
 	<body>
 	<div id="header-start">
 		<h1>Shutters.biz</h1>
-		<form name="searchControl" action="javascript:;" method="post">
+		<form id="searchControl" action="javascript:;" method="post">
 			<input type="text" name="search">
 			<input id="submit-search" type="submit" value="Search">
 		</form>
 	</div>
+	<div id="toggle">Toggle Design</div>
+	<div id="properties-style1">
+		<p>Sort by: <a href="javascript:;" name="name">Name </a> <a href="javascript:;" name="featured">Featured</a> <a href="javascript:;" name="toprated">Top Rated</a> <a href="javascript:;" name="price">Price</a></p>
+	</div>
+	<div id="properties-style2">
+		<span id="property-name" class="property"><a href="javascript:;" name="name">Name </a></span>
+		<span id="property-featured" class="property"><a href="javascript:;" name="featured">Featured</a></span>
+		<span id="property-toprated" class="property"><a href="javascript:;" name="toprated">Top Rated</a></span> 
+		<span id="property-price" class="property"><a href="javascript:;" name="price">Price</a></span></p>
+	</div>
 	<div id="content"></div>
-	<div id="footer"></div>
+	<div id="loading">
+	<img href="img/ajax-loader.gif" src="img/ajax-loader.gif" alt="Loading..."/>
+	</div>
 	</body>
 </html>
