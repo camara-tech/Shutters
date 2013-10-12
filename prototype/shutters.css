@@ -21,6 +21,21 @@ body {
 	border-width:1px;
 }
 
-#properties{
+#properties-style1{
+	display:none;
+}
+
+#properties-style2{
+	display:none;
+}
+
+#content {
+	display:none;
+}
+
+#loading {
+	display:none;
+}
+#toggle{
 	display:none;
 }
