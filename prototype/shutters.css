@@ -1,16 +1,30 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+
 body {
 	width: 800px;
 	margin: auto;
 }
 #header{
-	text-align: center;
-}
-
-#header-start{
-	text-align:center;
+	font-family: 'Titillium Web', sans-serif;
 	margin-top:35%;
+	text-align: center;
+	font-size: 2em;
+}
+#header h1{
+	margin:0;
 }
 
+#header input {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	font-size: 0.8em;
+}
+
+#header input#submit-search:hover  {
+	background:#eee;
+	border-color:#99f;
+}
 .item {
 	border-style:solid;
 	border-width:1px;

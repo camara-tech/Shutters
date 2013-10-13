@@ -11,7 +11,8 @@ $(document).ready(function() {
 		$search_value = $(this).serialize();
 	
 		//move the search box out of the way of the results
-		$("#header-start").animate({marginTop:"0"});
+		$("#header").animate({marginTop:"0"});
+		$("#header").animate({fontSize:"1em"});
 	
 		//change the URL
 		history.pushState($search_value,"Search","searchresults.html");
