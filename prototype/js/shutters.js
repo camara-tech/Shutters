@@ -1,11 +1,5 @@
 $(document).ready(function() {
 
-//toggle the design for sorting search results
-	$("#toggle").click(function(){
-		$("#properties-style1").toggle();
-		$("#properties-style2").toggle();
-	});
-
 //when the search happens	
 	$("#searchControl").submit(function(){
 		$search_value = $(this).serialize();
@@ -42,11 +36,9 @@ $(document).ready(function() {
 				}
 				$("#content").append($html);
 			}
-			$("#loading").fadeOut();
-			$("#toggle").fadeIn();
-			$("#properties-style1").fadeIn();
-			$("#content").slideDown();		
 		});
-			
+			$("#loading").fadeOut();
+			$("#properties").fadeIn();
+			$("#content").slideDown();					
 	});
 });
