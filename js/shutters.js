@@ -27,9 +27,9 @@ $(document).ready(function() {
 				$image = data[i].image;
 				
 				//build the html for the object
-				$html = "<div class = 'item'><span id='image'><img src='" + $image + "' width=150 height=135></span><span id='name'>"+$productName+"</span><span id='rating'>"+$avgRating+" out of 10("+$numRatings+")</span> <span id='price'>"+$price+"</span>";
+				$html = "<div class = 'item'><div id='image'><img src='" + $image + "' width=150 height=135></div><div id='name'><h2>"+$productName+"</h2></div><div id='rating'>Rating: "+$avgRating+" out of 10("+$numRatings+")</div> <div id='price'><h3>Cost: $"+$price+"</h3></div>";
 				if ($featured) {
-					$html = $html + "<span id='featured'>Featured</span></div>";
+					$html = $html + "<div id='featured'>Featured</div></div>";
 				}
 				else {
 					$html = $html + "</div>";

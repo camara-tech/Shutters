@@ -45,5 +45,25 @@ body {
 	display:none;
 }
 
-
-	
+div.item{
+	height:140px;
+	width:inherit;
+}
+div#image{
+float:left;
+width: 150px;
+}
+div#name {
+margin-left: 5px;
+}
+div#rating {
+padding-right: 10px;
+float:right;
+}	
+div#price {
+float: right;
+padding-right: 10px;
+}
+div#featured{
+padding-left:5px;
+}
