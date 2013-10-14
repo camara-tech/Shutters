@@ -1,17 +1,12 @@
 $(document).ready(function() {
 
-//toggle the design for sorting search results
-	$("#toggle").click(function(){
-		$("#properties-style1").toggle();
-		$("#properties-style2").toggle();
-	});
-
 //when the search happens	
 	$("#searchControl").submit(function(){
 		$search_value = $(this).serialize();
 	
 		//move the search box out of the way of the results
-		$("#header-start").animate({marginTop:"0"});
+		$("#header").animate({marginTop:"0"});
+		$("#header").animate({fontSize:"1em"});
 	
 		//change the URL
 		history.pushState($search_value,"Search","searchresults.html");
@@ -32,20 +27,18 @@ $(document).ready(function() {
 				$image = data[i].image;
 				
 				//build the html for the object
-				$html = "<div class = 'item'><span id='image'><img src='" + $image + "' width=150 height=135></span><span id='name'>"+$productName+"</span><span id='rating'>"+$avgRating+" out of 10("+$numRatings+")</span> <span id='price'>"+$price+"</span>";
+				$html = "<div class = 'item'><div id='image'><img src='" + $image + "' width=150 height=135></div><div id='name'><h2>"+$productName+"</h2></div><div id='rating'>Rating: "+$avgRating+" out of 10("+$numRatings+")</div> <div id='price'><h3>Cost: $"+$price+"</h3></div>";
 				if ($featured) {
-					$html = $html + "<span id='featured'>Featured</span></div>";
+					$html = $html + "<div id='featured'>Featured</div></div>";
 				}
 				else {
 					$html = $html + "</div>";
 				}
 				$("#content").append($html);
 			}
-			$("#loading").fadeOut();
-			$("#toggle").fadeIn();
-			$("#properties-style1").fadeIn();
-			$("#content").slideDown();		
 		});
-			
+			$("#loading").fadeOut();
+			$("#properties").fadeIn();
+			$("#content").slideDown();					
 	});
 });
