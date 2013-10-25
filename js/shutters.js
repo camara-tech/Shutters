@@ -1,3 +1,23 @@
+//Define the namespace
+window.Shutters = {};
+
+(function (Shutters) {
+	function Shutter() {
+		var self = this;
+		
+		self.ProductName = ko.observable("");
+		self.ProductPrice = ko.observable(0.00);
+		self.AvgRating = ko.observable(0);
+		self.NumRatings = ko.observable(0);
+		self.Featured = ko.observable(false);
+		self.image = ko.observable("");	
+	}
+	
+	Shutters.Shutter = Shutter;
+		
+} (window.Shutters));
+
+
 $(document).ready(function() {
 
 //when the search happens	
@@ -41,4 +61,8 @@ $(document).ready(function() {
 			$("#properties").fadeIn();
 			$("#content").slideDown();					
 	});
+	
+	//need to handle the different sorting mechanisms
+	$("#name")
+	$("#price")
 });
