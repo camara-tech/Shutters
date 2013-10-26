@@ -7,22 +7,33 @@
 	<body>
 	<div id="header">
 		<h1>Shutters.biz</h1>
-		<form id="searchControl" action="javascript:;" method="post">
-			<input type="text" name="search">
-			<input id="submit-search" type="submit" value="Search">
-		</form>
+		<input data-bind="value: searchTerm" />
+		<button data-bind="click: submitSearch">Search</button>
 	</div>
 	<div id="properties">
-		<p>Sort by: <a href="javascript:;" name="name">Name </a> | <a href="javascript:;" name="featured">Featured</a> | <a href="javascript:;" name="toprated">Top Rated</a> | <a href="javascript:;" name="price">Price</a></p>
+		<p>Sort by: <a href="#" data-bind="click: sortByName">Name </a> | <a href="#" data-bind="click: sortByPrice">Price</a></p>
 	</div>
-	<div id="content">
-	
+	<div id="content" data-bind="foreach: shutters">
+		<div class="item">
+			<div class="item-image" data-bind="text: image"></div>
+			<div class="item-name" data-bind="text: name"></div>
+			<div class="item-rating" data-bind="text: rating"></div>
+			<div class="item-price" data-bind="text: price"></div>
+			<div class="item-featured" data-bind="text: featured"></div>
+		</div>
 	</div>
 	<div id="loading">
 	<img href="img/ajax-loader.gif" src="img/ajax-loader.gif" alt="Loading..."/>
 	</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
-		<script src="js/shutters.js"></script>
+	<div id="error">You have not entered a search term</div>
+	
+	<!-- scripts
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	-->
+	
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
+	<script src="js/shutters.js"></script>
 	</body>
 </html>
