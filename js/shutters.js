@@ -1,44 +1,98 @@
-$(document).ready(function() {
+//the shutter item model, represents each item in the search results
+function ShutterItem(shutter) {
+	var self = this;
 
-//when the search happens	
-	$("#searchControl").submit(function(){
-		$search_value = $(this).serialize();
+	self.name = shutter.ProductName;
+	self.price = "$" + shutter.Price;
+	self.rating = shutter.AvgRating;
+	self.image = "<img src='" + shutter.image + "' alt='" + self.name + "' />"
 	
-		//move the search box out of the way of the results
-		$("#header").animate({marginTop:"0"});
-		$("#header").animate({fontSize:"1em"});
+	if (shutter.Featured) {
+	self.featured = "featured"
+	}
+	else {
+	self.featured = ""
+	}
+}
+
+//the shutter view model
+function ShuttersViewModel() {
+	var self = this;
 	
-		//change the URL
-		history.pushState($search_value,"Search","searchresults.html");
+	//the array of shutters that we are messing with
+	self.shutters = ko.observableArray();
+	
+	//the search term itself
+	self.searchTerm = ko.observable("");
+	
+	//what happens when the search button is pressed
+	self.submitSearch = function() {
+		//make sure that we have an actual value to look for
+		if (self.searchTerm() == "") {
+			
+			//we have no value, so we can't search for anything.
+			$("#error").fadeIn();
+			
+		} 
+		else {
 		
-		//show the loading screen
-		$("#loading").fadeIn();
-
-		//perform the ajax call asynchronously
-		$.getJSON("js/searchresults.json",function(data) {
-			for (var i = 0; i<data.length;i++) {
-				
-				// pull out all the data for one object
-				$productName = data[i].ProductName;
-				$price = data[i].Price.toString();
-			    $avgRating = data[i].AvgRating.toString();
-				$numRatings = data[i].NumRatings.toString();
-				$featured = data[i].Featured;
-				$image = data[i].image;
-				
-				//build the html for the object
-				$html = "<div class = 'item'><div id='image'><img src='" + $image + "' width=150 height=135></div><div id='name'><h2>"+$productName+"</h2></div><div id='rating'>Rating: "+$avgRating+" out of 10("+$numRatings+")</div> <div id='price'><h3>Cost: $"+$price+"</h3></div>";
-				if ($featured) {
-					$html = $html + "<div id='featured'>Featured</div></div>";
+			//move the searchbox out of the way of the results
+			$("#header").animate({marginTop:"0"});
+			$("#header").animate({fontSize:"1em"});
+		
+			//change the URL
+			history.pushState(self.searchTerm(),"Search","searchresults.html");
+		
+			//show the loading screen
+			$("#content").fadeOut();
+			$("#error").fadeOut();
+			$("#loading").fadeIn();
+			
+			//clear any old data
+			self.shutters([]);
+			
+			// Now, if we had a server, I would here use jQuery's ajax function,
+			// Instead, I will be using the jQuery's getJSON function
+			$.getJSON("js/searchresults.json",function(data) {
+				for (var i = 0; i<data.length;i++) {
+					//insert each object in the JSON into an observable array
+					self.shutters.push(new ShutterItem(data[i]));
 				}
-				else {
-					$html = $html + "</div>";
-				}
-				$("#content").append($html);
-			}
-		});
+			});
+			
+			//remove loading screen and show all the content
 			$("#loading").fadeOut();
 			$("#properties").fadeIn();
-			$("#content").slideDown();					
-	});
-});
+			$("#content").slideDown();	
+		}
+	}
+
+	console.log(self.shutters());
+	//what happens when the sort by name link is clicked
+	self.sortByName = function () {
+	}
+	
+	//what happens when the sort by price link is clicked
+	self.sortByPrice = function () {
+	}
+	
+	//what happens when the grid view link is clicked
+	self.showGridView = function () {
+	}
+	
+	//what happens when the List view link is clicked
+	self.showListView = function () {
+	}
+	
+	//what happens when showing five items
+	self.showFiveItems = function() {}
+	
+	//what happens when showing ten items
+	self.showTenItems = function() {}
+	
+	//what happens when showing infinite items
+	self.showInfiniteItems = function() {}
+}
+
+// setup knockout
+ko.applyBindings(new ShuttersViewModel());

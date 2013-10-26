@@ -21,6 +21,13 @@ body {
 	font-size: 0.8em;
 }
 
+#header button {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999;
+	font-size: 0.8em;
+}
+
 #submit-search:hover  {
 	background:#eee;
 	border-color:#99f;
@@ -35,11 +42,15 @@ body {
 }
 
 #content {
-	display:none;
+	display:block;
 }
 
 #loading {
 	display:none;
+	margin:auto;
+	margin-top:35%;
+	width: 37px;
+	height:37px;
 }
 #toggle{
 	display:none;
@@ -49,21 +60,25 @@ div.item{
 	height:140px;
 	width:inherit;
 }
-div#image{
+.item-image{
 float:left;
 width: 150px;
 }
-div#name {
+.item-name {
 margin-left: 5px;
 }
-div#rating {
+.item-rating {
 padding-right: 10px;
 float:right;
 }	
-div#price {
+.item-price {
 float: right;
 padding-right: 10px;
 }
-div#featured{
+item-featured{
 padding-left:5px;
+}
+
+#error{
+display:none;
 }
