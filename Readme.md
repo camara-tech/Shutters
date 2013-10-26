@@ -8,12 +8,8 @@ Technologies used:
 * CSS3
 * Javascript
 * jQuery
-* ASP.NET
 * knockoutJS
 
-The solution is for working on the ASP.NET part of the website.
-
-the prototype folder is where I rapidly prototype how I want the page to look and interact.
-
+I used JSON files to simulate returning results from the server.
 
 Thank you Taylor Anderson and the team at Genuent for working with me in my job search. 
