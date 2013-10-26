@@ -84,7 +84,14 @@ function ShuttersViewModel() {
 	self.showListView = function () {
 	}
 	
-		
+	//what happens when showing five items
+	self.showFiveItems = function() {}
+	
+	//what happens when showing ten items
+	self.showTenItems = function() {}
+	
+	//what happens when showing infinite items
+	self.showInfiniteItems = function() {}
 }
 
 // setup knockout
