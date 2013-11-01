@@ -13,18 +13,25 @@
 	<div id="properties">
 		<p>Sort by: <a href="#" data-bind="click: sortByName">Name</a> | <a href="#" data-bind="click: sortByPrice">Price</a></p>
 		
-		<p>Items per page: <a href="#" data-bind="click: showFiveItems">Five</a> | <a href="#" data-bind="click: showTenItems">Ten</a> | <a href="#" data-bind="click: showInfiniteItems">Infinite</a></p>
+		<p>Items per page: <a href="#" data-bind="click: showFourItems">Four</a> | <a href="#" data-bind="click: showEightItems">Eight</a> | <a href="#" data-bind="click: showInfiniteItems">Infinite</a></p>
 		
 		<p> Toggle View: <a href="#" data-bind="click: showGridView">Grid</a> | <a href="#" data-bind="click: showListView">List</a></p>
 		
 	</div>
 	<div id="content" data-bind="foreach: shutters">
 		<div class="item">
-			<div class="item-image" data-bind="html: image"></div>
-			<div class="item-name" data-bind="text: name"></div>
-			<div class="item-rating" data-bind="text: rating"></div>
-			<div class="item-price" data-bind="text: price"></div>
-			<div class="item-featured" data-bind="text: featured"></div>
+			<div class="item-left">
+				<div class="item-image" data-bind="html: image"></div>
+				<div class="item-featured" data-bind="html: featured"></div>
+			</div>
+			<div class ="item-middle">
+				<div class="item-name" data-bind="text: name"></div>
+			</div>
+			<div class ="item-right">
+				<div class="item-price" data-bind="text: price"></div>
+				<div class="item-rating" data-bind="text: rating"></div>
+			</div>
+			
 		</div>
 	</div>
 	<div id="loading">

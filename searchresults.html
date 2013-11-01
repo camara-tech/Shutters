@@ -1,27 +1,75 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html><head>
 		<title>Shutters.biz - Blinds.com Interview Test</title>
-		<link rel="stylesheet" type="text/css" href="shutters.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
-		<script src="js/shutters.js"></script>
+		<link href="shutters.css" type="text/css" rel="stylesheet">
 	</head>
 	<body>
-	<div style="margin-top: 0px; font-size: 1em;" id="header">
+	<div id="header" style="margin-top: 0px; font-size: 1em;">
 		<h1>Shutters.biz</h1>
-		<form id="searchControl" action="javascript:;" method="post">
-			<input name="search" type="text">
-			<input id="submit-search" value="Search" type="submit">
-		</form>
+		<input data-bind="value: searchTerm">
+		<button data-bind="click: submitSearch">Search</button>
 	</div>
-	<div style="display: block;" id="properties">
-		<p>Sort by: <a href="javascript:;" id="sort-name">Name </a> | <a href="javascript:;" id="sort-featured">Featured</a> | <a href="javascript:;" id="sort-toprated">Top Rated</a> | <a href="javascript:;" id="sort-price">Price</a></p>
+	<div id="properties" style="display: block;">
+		<p>Sort by: <a data-bind="click: sortByName" href="#">Name</a> | <a data-bind="click: sortByPrice" href="#">Price</a></p>
+		
+		<p>Items per page: <a data-bind="click: showFiveItems" href="#">Five</a> | <a data-bind="click: showTenItems" href="#">Ten</a> | <a data-bind="click: showInfiniteItems" href="#">Infinite</a></p>
+		
+		<p> Toggle View: <a data-bind="click: showGridView" href="#">Grid</a> | <a data-bind="click: showListView" href="#">List</a></p>
+		
 	</div>
-	<div style="display: block;" id="content"><div class="item"><div id="image"><img src="http://www.blinds.com/images/product/pictures/picture_1166032536.jpg" height="135" width="150"></div><div id="name">Levelor</div><div id="rating">3 out of 10(20)</div> <div id="price">62</div><div id="featured">Featured</div></div><div class="item"><div id="image"><img src="http://www.blinds.com/images/product/pictures/picture_1355842567.jpg" height="135" width="150"></div><div id="name"> Signature Solar Shades</div><div id="rating">4.8 out of 10(132)</div> <div id="price">62</div></div><div class="item"><div id="image"><img src="http://www.blinds.com/images/product/pictures/picture_1355842567.jpg" height="135" width="150"></div><div id="name"> Signature Solar Shades</div><div id="rating">4.8 out of 10(132)</div> <div id="price">62</div></div><div class="item"><div id="image"><img src="http://www.blinds.com/images/product/pictures/picture_1355842567.jpg" height="135" width="150"></div><div id="name"> Signature Solar Shades</div><div id="rating">4.8 out of 10(132)</div> <div id="price">62</div></div><div class="item"><div id="image"><img src="http://www.blinds.com/images/product/pictures/picture_1355842567.jpg" height="135" width="150"></div><div id="name"> Signature Solar Shades</div><div id="rating">4.8 out of 10(132)</div> <div id="price">62</div></div></div>
-	<div style="display: none;" id="loading">
-	<img href="img/ajax-loader.gif" src="img/ajax-loader.gif" alt="Loading...">
-	</div>
+	<div data-bind="foreach: shutters" id="content" style="display: block;">
+		<div class="item">
+			<div data-bind="html: image" class="item-image"><img alt="Levelor" src="http://www.blinds.com/images/product/pictures/picture_1166032536.jpg"></div>
+			<div data-bind="text: name" class="item-name">Levelor</div>
+			<div data-bind="text: rating" class="item-rating">3</div>
+			<div data-bind="text: price" class="item-price">$62</div>
+			<div data-bind="text: featured" class="item-featured">featured</div>
+		</div>
 	
-</body>
-</html>
+		<div class="item">
+			<div data-bind="html: image" class="item-image"><img alt="Signature Solar Shades" src="http://www.blinds.com/images/product/pictures/picture_1355842567.jpg"></div>
+			<div data-bind="text: name" class="item-name">Signature Solar Shades</div>
+			<div data-bind="text: rating" class="item-rating">4.8</div>
+			<div data-bind="text: price" class="item-price">$62</div>
+			<div data-bind="text: featured" class="item-featured"></div>
+		</div>
+	
+		<div class="item">
+			<div data-bind="html: image" class="item-image"><img alt="Signature Solar Shades" src="http://www.blinds.com/images/product/pictures/picture_1355842567.jpg"></div>
+			<div data-bind="text: name" class="item-name">Signature Solar Shades</div>
+			<div data-bind="text: rating" class="item-rating">4.8</div>
+			<div data-bind="text: price" class="item-price">$62</div>
+			<div data-bind="text: featured" class="item-featured"></div>
+		</div>
+	
+		<div class="item">
+			<div data-bind="html: image" class="item-image"><img alt="Signature Solar Shades" src="http://www.blinds.com/images/product/pictures/picture_1355842567.jpg"></div>
+			<div data-bind="text: name" class="item-name">Signature Solar Shades</div>
+			<div data-bind="text: rating" class="item-rating">4.8</div>
+			<div data-bind="text: price" class="item-price">$62</div>
+			<div data-bind="text: featured" class="item-featured"></div>
+		</div>
+	
+		<div class="item">
+			<div data-bind="html: image" class="item-image"><img alt="Signature Solar Shades" src="http://www.blinds.com/images/product/pictures/picture_1355842567.jpg"></div>
+			<div data-bind="text: name" class="item-name">Signature Solar Shades</div>
+			<div data-bind="text: rating" class="item-rating">4.8</div>
+			<div data-bind="text: price" class="item-price">$62</div>
+			<div data-bind="text: featured" class="item-featured"></div>
+		</div>
+	</div>
+	<div id="loading" style="display: none;">
+	<img alt="Loading..." src="img/ajax-loader.gif" href="img/ajax-loader.gif">
+	</div>
+	<div id="error">You have not entered a search term</div>
+	
+	<!-- scripts
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
+	<script src="js/shutters.js"></script>	-->
+	
+</body></html>

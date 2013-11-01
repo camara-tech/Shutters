@@ -1,19 +1,29 @@
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web);
 
+/* ----- primary structure ----- */
 body {
 	width: 800px;
 	margin: auto;
+	font-family: sans-serif;
 }
+
 #header{
 	font-family: 'Titillium Web', sans-serif;
 	margin-top:35%;
 	text-align: center;
 	font-size: 2em;
 }
+/*
+#content {
+	display:none;
+}
+*/
+/* ----- Title ----- */
 #header h1{
 	margin:0;
 }
 
+/* ----- Search ----- */
 #header input {
 	border-style: solid;
 	border-width: 1px;
@@ -28,23 +38,107 @@ body {
 	font-size: 0.8em;
 }
 
-#submit-search:hover  {
+#header button:hover  {
 	background:#eee;
 	border-color:#99f;
 }
-.item {
-	border-style:solid;
-	border-width:1px;
-}
-
+/* Properties */
 #properties{
 	display:none;
 }
 
-#content {
-	display:block;
+#properties p{
+    display:inline;
+    padding-right: 77px;
+}
+/* ----- Item List Style ----- */
+.item {
+	border-style:solid;
+	border-width:1px;
+	height:140px;
+	width:inherit;
+	margin-top: 5px;
 }
 
+.item-left{
+width:150px;
+height:140px;
+float:left;
+}
+
+.item-middle{
+width: 150px;
+float: left;
+}
+
+.item-right{
+width:150px;
+float: left;
+}
+
+.item-image{
+width: 150px;
+}
+
+.item-name {
+margin-left: 5px;
+font-size:1.5em;
+}
+
+.item-rating {
+padding-right: 10px;
+float:left;
+}	
+
+.item-price {
+float: left;
+padding-right: 10px;
+font-size:1.5em;
+}
+
+.item-featured{
+width:150px;
+height:140px;
+top: -146px;
+position:relative;
+}
+
+/* ----- Item Grid Style----- */
+/*
+.item {
+	border-style:solid;
+	border-width:1px;
+	height:140px;
+	width:inherit;
+}
+
+.item-left {
+float:left;
+
+}
+.item-middle{
+float:left;
+padding: 0px 20px;
+}
+.item-right{
+float:left;
+padding: 0px 20px;
+}
+
+.item-image{
+width: 150px;
+}
+
+.item-name {
+}
+.item-rating {
+}	
+.item-price {
+}
+.item-featured{
+}
+*/
+/* ----- Loading ----- */
 #loading {
 	display:none;
 	margin:auto;
@@ -52,33 +146,8 @@ body {
 	width: 37px;
 	height:37px;
 }
-#toggle{
-	display:none;
-}
 
-div.item{
-	height:140px;
-	width:inherit;
-}
-.item-image{
-float:left;
-width: 150px;
-}
-.item-name {
-margin-left: 5px;
-}
-.item-rating {
-padding-right: 10px;
-float:right;
-}	
-.item-price {
-float: right;
-padding-right: 10px;
-}
-item-featured{
-padding-left:5px;
-}
-
+/* ----- Error ----- */
 #error{
 display:none;
 }
