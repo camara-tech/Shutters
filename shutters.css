@@ -57,27 +57,33 @@ body {
 	border-width:1px;
 	height:140px;
 	width:inherit;
-	margin-top: 5px;
+	margin: 4px;
+}
+
+.grid {
+	width: 190px;
+	height: 300px;
+	float: left;
 }
 
 .item-left{
-width:150px;
+width:190px;
 height:140px;
 float:left;
 }
 
 .item-middle{
-width: 150px;
+width: 190px;
 float: left;
 }
 
 .item-right{
-width:150px;
+width:190px;
 float: left;
 }
 
 .item-image{
-width: 150px;
+width: 190px;
 }
 
 .item-name {

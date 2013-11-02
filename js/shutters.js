@@ -5,7 +5,7 @@ function ShutterItem(shutter) {
 	self.name = shutter.ProductName;
 	self.price = "$" + shutter.Price;
 	self.rating = shutter.AvgRating + " out of 10";
-	self.image = "<img src='" + shutter.image + "' alt='" + self.name + "' height='140' width='150'	/>"
+	self.image = "<img src='" + shutter.image + "' alt='" + self.name + "' height='177' width='190'	/>"
 	
 	if (shutter.Featured) {
 	self.featured = "<img src='http://www.blinds.com/skin07/images/category/featured_graphic.png' alt=''/>"
@@ -117,7 +117,7 @@ function ShuttersViewModel() {
 		//change the html to use the css that renders a grid
 		if (listview == true) {
 			listview = false;
-			// $(#content).addClass("grid");
+			$(".item").addClass("grid");
 			gridview = true;
 			
 			
@@ -129,7 +129,7 @@ function ShuttersViewModel() {
 		//change the html to use the css that renders a list
 		if (gridview == true) {
 			gridview = false;
-			// $(#content).removeClass("grid");
+			$(".item").removeClass("grid");
 			listview = true;
 		}
 	}
