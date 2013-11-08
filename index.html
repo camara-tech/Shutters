@@ -11,12 +11,7 @@
 		<button data-bind="click: submitSearch">Search</button>
 	</div>
 	<div id="properties">
-		<p>Sort by: <a href="#" data-bind="click: sortByName">Name</a> | <a href="#" data-bind="click: sortByPrice">Price</a></p>
-		
-		<p>Items per page: <a href="#" data-bind="click: showFourItems">Four</a> | <a href="#" data-bind="click: showEightItems">Eight</a> | <a href="#" data-bind="click: showInfiniteItems">Infinite</a></p>
-		
-		<p> Toggle View: <a href="#" data-bind="click: showGridView">Grid</a> | <a href="#" data-bind="click: showListView">List</a></p>
-		
+		<p>Sort by: <a href="#" data-bind="click:sortByFeatured">Featured</a> | <a href="#" data-bind="click: sortByName">Name</a> | <a href="#" data-bind="click: sortByPrice">Price</a></p>		
 	</div>
 	<div id="content" data-bind="foreach: shutters">
 		<div class="item">
@@ -39,11 +34,12 @@
 	</div>
 	<div id="error">You have not entered a search term</div>
 	
+
 	<!-- scripts
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	-->
-	
+
 	<script src="js/jquery-1.10.2.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js"></script>
 	<script src="js/shutters.js"></script>
