@@ -43,8 +43,8 @@ function ShuttersViewModel() {
             $("#header").animate({marginTop: "0"});
             $("#header").animate({fontSize: "1em"});
 
-            //change the URL
-            //history.pushState(self.searchTerm(), "Search", "searchresults.html");
+            //change the URL for SEO
+            history.pushState(self.searchTerm(), "Search", "searchresults.html");
 
             //hide the error message
             $("#error").fadeOut();
