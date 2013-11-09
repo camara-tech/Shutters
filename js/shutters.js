@@ -4,8 +4,8 @@ function ShutterItem(shutter) {
 
     self.name = shutter.ProductName;
     self.price = "$" + shutter.Price;
-    self.rating = shutter.AvgRating + " out of 10";
-    self.image = "<img src='" + shutter.image + "' alt='" + self.name + "' height='177' width='190' />";
+    self.rating = "Rating: " + shutter.AvgRating + " out of 10";
+    self.image = "<img src='" + shutter.image + "' alt='" + self.name + "' height='140' width='150' />";
 
     if (shutter.Featured) {
         self.featured = "<img src='http://www.blinds.com/skin07/images/category/featured_graphic.png' alt=''/>";
@@ -92,7 +92,7 @@ function ShuttersViewModel() {
     //what happens when the sort by price link is clicked
     self.sortByPrice = function () {
         self.shutters([]);
-        $.getJSON("json/pricesortedsearchresults_1.json", function (data) {
+        $.getJSON("json/pricesortedsearchresults.json", function (data) {
                 for (var a = 0; a < data.length; a++) {
                 self.shutters.push(new ShutterItem(data[a]));
                 }
